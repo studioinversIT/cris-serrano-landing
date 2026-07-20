@@ -58,7 +58,7 @@
     .faq-icon          { transition: transform 0.3s ease; }
     .faq-icon.open     { transform: rotate(45deg); }
     @media (max-width: 640px) {
-      .hero-headline { font-size: 2.2rem !important; line-height: 1.15 !important; }
+      .hero-headline { font-size: 2rem !important; line-height: 1.12 !important; }
     }
   </style>
 </head>
@@ -79,98 +79,100 @@
 
 
 <!-- ═══════════════════════════════════════════
-     HERO
+     HERO + VSL
 ════════════════════════════════════════════ -->
-<section class="gradient-hero min-h-screen flex items-center py-20 px-4">
-  <div class="max-w-4xl mx-auto text-center animate-fade-up">
+<section class="gradient-hero min-h-screen flex items-center py-20 px-6">
+  <div class="max-w-7xl mx-auto w-full">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
 
-    <!-- Eyebrow -->
-    <div class="inline-flex items-center gap-2 bg-gold/10 border border-gold/30 rounded-full px-4 py-2 mb-8">
-      <span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
-      <span class="text-gold text-sm font-semibold tracking-wide">La historia real de Christopher Serrano</span>
-    </div>
+      <!-- ── Columna izquierda: Promesa ── -->
+      <div class="animate-fade-up">
 
-    <!-- Headline -->
-    <h1 class="hero-headline text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-6">
-      Mañana a esta hora ya tienes<br/>
-      <span class="text-gradient">un negocio que genera $12,500.</span>
-    </h1>
+        <!-- Eyebrow -->
+        <div class="inline-flex items-center gap-2 bg-gold/10 border border-gold/30 rounded-full px-4 py-2 mb-8">
+          <span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
+          <span class="text-gold text-sm font-semibold tracking-wide">La historia real de Christopher Serrano</span>
+        </div>
 
-    <!-- Subheadline -->
-    <p class="text-xl md:text-2xl text-white/70 max-w-2xl mx-auto leading-relaxed mb-4">
-      Armado. Activo. Con un plan paso a paso.
-    </p>
-    <p class="text-lg text-white/50 max-w-xl mx-auto leading-relaxed mb-10">
-      No en semanas. No "cuando todo esté listo". En menos de 24 horas tienes tu franquicia digital estructurada y el mismo sistema que me llevó de hacer trabajos físicos como inmigrante a ganar
-      <span class="text-gold font-bold">$12,500 cada quincena.</span>
-    </p>
+        <!-- Headline -->
+        <h1 class="hero-headline text-4xl md:text-5xl lg:text-[3.25rem] font-black leading-[1.1] mb-6">
+          Mañana a esta hora<br/>ya tienes un negocio<br/>
+          <span class="text-gradient">que genera $12,500.</span>
+        </h1>
 
-    <!-- CTA -->
-    <a href="#formulario" class="btn-primary inline-block text-lg px-10 py-4 rounded-full animate-pulse-glow mb-4">
-      Agenda hoy. Mañana tienes tu negocio. →
-    </a>
-    <p class="text-white/40 text-sm">Llamada de 30 min · Sin costo · Sin compromiso</p>
+        <!-- Subheadline -->
+        <p class="text-lg text-white/70 leading-relaxed mb-3">
+          Armado. Activo. Con un plan paso a paso.
+        </p>
+        <p class="text-base text-white/50 leading-relaxed mb-10">
+          No en semanas. En menos de 24 horas tienes tu franquicia digital estructurada — el mismo sistema que me llevó de hacer trabajos físicos como inmigrante a ganar
+          <span class="text-gold font-bold">$12,500 cada quincena.</span>
+        </p>
 
-    <!-- Trust bar -->
-    <div class="flex flex-wrap justify-center gap-6 mt-12 pt-10 border-t border-white/10">
-      <div class="text-center">
-        <p class="text-2xl font-black text-gold">+80</p>
-        <p class="text-white/50 text-sm">países con presencia</p>
+        <!-- CTA -->
+        <a href="#formulario" class="btn-primary inline-block text-base px-8 py-4 rounded-full animate-pulse-glow mb-3">
+          Agenda hoy. Mañana tienes tu negocio. →
+        </a>
+        <p class="text-white/40 text-sm">Llamada de 30 min · Sin costo · Sin compromiso</p>
+
+        <!-- Trust bar -->
+        <div class="flex flex-wrap gap-6 mt-10 pt-8 border-t border-white/10">
+          <div>
+            <p class="text-xl font-black text-gold">+80</p>
+            <p class="text-white/40 text-xs mt-0.5">países</p>
+          </div>
+          <div class="w-px bg-white/10 hidden sm:block"></div>
+          <div>
+            <p class="text-xl font-black text-gold">$12,500</p>
+            <p class="text-white/40 text-xs mt-0.5">por quincena</p>
+          </div>
+          <div class="w-px bg-white/10 hidden sm:block"></div>
+          <div>
+            <p class="text-xl font-black text-gold">+3,000</p>
+            <p class="text-white/40 text-xs mt-0.5">personas en el sistema</p>
+          </div>
+          <div class="w-px bg-white/10 hidden sm:block"></div>
+          <div>
+            <p class="text-xl font-black text-gold">&lt;24h</p>
+            <p class="text-white/40 text-xs mt-0.5">negocio activo</p>
+          </div>
+        </div>
+
       </div>
-      <div class="w-px bg-white/10 hidden sm:block"></div>
-      <div class="text-center">
-        <p class="text-2xl font-black text-gold">$12,500</p>
-        <p class="text-white/50 text-sm">por quincena · resultado de Cris</p>
+
+      <!-- ── Columna derecha: VSL ── -->
+      <div>
+
+        <!-- Label live -->
+        <div class="flex items-center gap-2 mb-3">
+          <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse flex-shrink-0"></span>
+          <p class="text-white/40 text-sm tracking-wide">Mira el video antes de agendar</p>
+        </div>
+
+        <!-- Video embed -->
+        <div class="video-wrapper border border-gold/20 shadow-2xl shadow-black/60">
+          <iframe
+            src="https://www.youtube.com/embed/VIDEO_ID_AQUI?cc_load_policy=1&rel=0&modestbranding=1"
+            title="Cris Serrano — Presentación del Sistema"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            loading="lazy"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <p class="text-white/25 text-xs mt-3 text-center">Subtítulos activados · 9:02 min</p>
+
+        <!-- Micro-CTA bajo el video -->
+        <div class="mt-5 p-5 rounded-2xl card-border bg-navy-card flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p class="text-white/60 text-sm">¿Ya viste el video? Da el siguiente paso.</p>
+          <a href="#formulario" class="btn-primary flex-shrink-0 px-6 py-2.5 rounded-full text-sm whitespace-nowrap">
+            Quiero conocer el sistema →
+          </a>
+        </div>
+
       </div>
-      <div class="w-px bg-white/10 hidden sm:block"></div>
-      <div class="text-center">
-        <p class="text-2xl font-black text-gold">+3,000</p>
-        <p class="text-white/50 text-sm">personas han viajado con el sistema</p>
-      </div>
-      <div class="w-px bg-white/10 hidden sm:block"></div>
-      <div class="text-center">
-        <p class="text-2xl font-black text-gold">&lt;24h</p>
-        <p class="text-white/50 text-sm">para tener tu negocio activo</p>
-      </div>
+
     </div>
-
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════
-     VSL — VIDEO
-════════════════════════════════════════════ -->
-<section class="py-20 px-4 bg-surface">
-  <div class="max-w-3xl mx-auto text-center">
-
-    <p class="text-gold text-sm font-semibold tracking-widest uppercase mb-4">Mira el video completo</p>
-    <h2 class="text-3xl md:text-4xl font-black mb-4">
-      El modelo que cambió todo —<br/>explicado en 9 minutos
-    </h2>
-    <p class="text-white/50 mb-10 max-w-lg mx-auto">Antes de agendar tu llamada, mira este video. Cris te explica exactamente cómo funciona el sistema y por qué no necesitas experiencia para arrancar.</p>
-
-    <!-- VIDEO EMBED — reemplaza el src con la URL real de YouTube/Vimeo -->
-    <div class="video-wrapper border border-gold/20 shadow-2xl shadow-gold/10">
-      <iframe
-        src="https://www.youtube.com/embed/VIDEO_ID_AQUI?autoplay=1&mute=1&cc_load_policy=1&rel=0&modestbranding=1"
-        title="Cris Serrano — Presentación del Sistema"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        loading="lazy"
-        allowfullscreen>
-      </iframe>
-    </div>
-
-    <p class="text-white/30 text-sm mt-4">Subtítulos activados · Duración: 9:02 min</p>
-
-    <!-- Micro-CTA post-video -->
-    <div class="mt-10 p-6 rounded-2xl card-border bg-navy-card">
-      <p class="text-white/80 mb-4">¿Ya viste el video? Da el siguiente paso.</p>
-      <a href="#formulario" class="btn-primary inline-block px-8 py-3 rounded-full">
-        Quiero conocer el sistema → Agenda tu llamada
-      </a>
-    </div>
-
   </div>
 </section>
 

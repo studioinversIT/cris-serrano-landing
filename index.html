@@ -52,6 +52,8 @@
     .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(201,162,39,0.5), 0 0 0 3px rgba(201,162,39,0.4); }
     .video-wrapper     { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; }
     .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; border-radius: 12px; }
+    .shorts-wrapper    { position: relative; padding-bottom: 177.78%; height: 0; overflow: hidden; border-radius: 12px; }
+    .shorts-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; border-radius: 12px; }
     .sticky-cta        { position: sticky; top: 0; z-index: 50; background: rgba(12,12,12,0.97); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(201,162,39,0.12); }
     .faq-answer        { display: none; }
     .faq-answer.open   { display: block; }
@@ -532,50 +534,47 @@
       Lo que dicen las personas<br/>que empezaron donde tú estás ahora
     </h2>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12 max-w-2xl mx-auto">
 
-      <!-- Testimonio 1 — reemplazar con real -->
-      <div class="p-6 rounded-2xl bg-navy-card card-border flex flex-col">
-        <div class="flex gap-1 mb-4">
-          <span class="text-gold">★★★★★</span>
+      <!-- Testimonio — Iván Tamayo -->
+      <div class="rounded-2xl bg-navy-card card-border overflow-hidden flex flex-col">
+        <div class="shorts-wrapper">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/Qn4EzzKWC5U?rel=0&modestbranding=1"
+            title="Testimonio Iván Tamayo"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            loading="lazy"
+            allowfullscreen>
+          </iframe>
         </div>
-        <p class="text-white/70 text-sm flex-1 italic mb-6">"[Insertar testimonio real — resultado concreto, antes y después]"</p>
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center text-gold font-bold text-sm">TN</div>
+        <div class="p-4 flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-gold/20 flex items-center justify-center text-gold font-black text-xs flex-shrink-0">IT</div>
           <div>
-            <p class="text-white font-semibold text-sm">Nombre Apellido</p>
-            <p class="text-white/40 text-sm">Ciudad, País</p>
+            <p class="text-white font-semibold text-sm">Iván Tamayo</p>
+            <p class="text-white/40 text-xs">Chicago, IL</p>
           </div>
+          <span class="ml-auto text-gold text-sm">★★★★★</span>
         </div>
       </div>
 
-      <!-- Testimonio 2 -->
-      <div class="p-6 rounded-2xl bg-navy-card card-border flex flex-col">
-        <div class="flex gap-1 mb-4">
-          <span class="text-gold">★★★★★</span>
+      <!-- Testimonio — María García -->
+      <div class="rounded-2xl bg-navy-card card-border overflow-hidden flex flex-col">
+        <div class="shorts-wrapper">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/aRS97yIEjqA?rel=0&modestbranding=1"
+            title="Testimonio María García"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            loading="lazy"
+            allowfullscreen>
+          </iframe>
         </div>
-        <p class="text-white/70 text-sm flex-1 italic mb-6">"[Insertar testimonio real — resultado concreto, antes y después]"</p>
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center text-gold font-bold text-sm">TN</div>
+        <div class="p-4 flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-gold/20 flex items-center justify-center text-gold font-black text-xs flex-shrink-0">MG</div>
           <div>
-            <p class="text-white font-semibold text-sm">Nombre Apellido</p>
-            <p class="text-white/40 text-sm">Ciudad, País</p>
+            <p class="text-white font-semibold text-sm">María García</p>
+            <p class="text-white/40 text-xs">Kearny, NJ</p>
           </div>
-        </div>
-      </div>
-
-      <!-- Testimonio 3 -->
-      <div class="p-6 rounded-2xl bg-navy-card card-border flex flex-col">
-        <div class="flex gap-1 mb-4">
-          <span class="text-gold">★★★★★</span>
-        </div>
-        <p class="text-white/70 text-sm flex-1 italic mb-6">"[Insertar testimonio real — resultado concreto, antes y después]"</p>
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center text-gold font-bold text-sm">TN</div>
-          <div>
-            <p class="text-white font-semibold text-sm">Nombre Apellido</p>
-            <p class="text-white/40 text-sm">Ciudad, País</p>
-          </div>
+          <span class="ml-auto text-gold text-sm">★★★★★</span>
         </div>
       </div>
 

@@ -95,8 +95,8 @@
 
     <!-- Eyebrow -->
     <div class="inline-flex items-center gap-2 bg-gold/10 border border-gold/30 rounded-full px-3 py-1.5 mb-4">
-      <span class="w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></span>
-      <span class="text-gold text-xs font-semibold tracking-wide">Sin experiencia. Sin contactos. Sin saber por dónde empezar.</span>
+      <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span>
+      <span class="text-gold text-xs font-semibold tracking-wide">Cupos disponibles esta semana · Quedan pocos lugares</span>
     </div>
 
     <!-- Headline -->
@@ -106,7 +106,7 @@
     </h1>
 
     <!-- Subheadline -->
-    <p class="text-sm md:text-base text-white/50 leading-relaxed mb-6 max-w-xl mx-auto">
+    <p class="text-base text-white/50 leading-relaxed mb-6 max-w-xl mx-auto">
       En menos de 24 horas: negocio armado, activo y operando. Mira el video y descubre cómo.
     </p>
 
@@ -152,12 +152,16 @@
     <svg class="w-7 h-7 text-white/20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
       <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/>
     </svg>
-    <p class="text-white/35 text-sm tracking-wide">Sigue mirando para descubrir el sistema completo</p>
+    <p class="text-white/35 text-sm tracking-wide">Sigue mirando — el sistema completo se desbloquea aquí abajo</p>
     <div style="width:280px">
       <div class="h-px rounded-full overflow-hidden" style="background:rgba(255,255,255,0.08)">
         <div id="video-progress" class="h-full rounded-full transition-all duration-1000" style="width:0%;background:linear-gradient(90deg,#C9A227,#E8C14A)"></div>
       </div>
       <p id="progress-label" class="text-white/20 text-xs mt-3">0:00 de 4:00</p>
+    </div>
+    <!-- Señal direccional -->
+    <div class="flex flex-col items-center gap-1 mt-2 opacity-25">
+      <svg class="w-4 h-4 text-gold animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
     </div>
   </div>
 </div>
@@ -387,7 +391,7 @@
           <span class="text-gold text-xs font-black tracking-tight">01</span>
         </div>
         <h3 class="font-bold text-white text-lg mb-2">Energía y ahorro</h3>
-        <p class="text-white/50 text-sm">Producto americano con 20+ años en el mercado. Mercado masivo: cualquier persona que conduce un vehículo es un cliente potencial.</p>
+        <p class="text-white/50 text-base">Producto americano con 20+ años en el mercado. Mercado masivo: cualquier persona que conduce un vehículo es un cliente potencial.</p>
         <p class="text-gold text-sm font-semibold mt-3">Hasta 100% en distribución directa</p>
       </div>
 
@@ -396,7 +400,7 @@
           <span class="text-gold text-xs font-black tracking-tight">02</span>
         </div>
         <h3 class="font-bold text-white text-lg mb-2">Viajes y experiencias</h3>
-        <p class="text-white/50 text-sm">Club de vacaciones que ya llevó a más de 3,000 personas a Dubai, Grecia, París y más. Ingreso residual por cada suscripción.</p>
+        <p class="text-white/50 text-base">Club de vacaciones que ya llevó a más de 3,000 personas a Dubai, Grecia, París y más. Ingreso residual por cada suscripción.</p>
         <p class="text-gold text-sm font-semibold mt-3">Ingreso residual mensual recurrente</p>
       </div>
 
@@ -405,7 +409,7 @@
           <span class="text-gold text-xs font-black tracking-tight">03</span>
         </div>
         <h3 class="font-bold text-white text-lg mb-2">Salud y bienestar</h3>
-        <p class="text-white/50 text-sm">Línea de productos de bienestar personal con tecnología avanzada. Descanso, recuperación y cuidado de la piel.</p>
+        <p class="text-white/50 text-base">Línea de productos de bienestar personal con tecnología avanzada. Descanso, recuperación y cuidado de la piel.</p>
         <p class="text-gold text-sm font-semibold mt-3">80% – 100% en distribución</p>
       </div>
 
@@ -414,7 +418,7 @@
           <span class="text-gold text-xs font-black tracking-tight">04</span>
         </div>
         <h3 class="font-bold text-white text-lg mb-2">Biohacking</h3>
-        <p class="text-white/50 text-sm">La nueva tendencia mundial del bienestar optimizado. Mercado proyectado en un trillón de dólares. Estás entrando antes que la mayoría.</p>
+        <p class="text-white/50 text-base">La nueva tendencia mundial del bienestar optimizado. Mercado proyectado en un trillón de dólares. Estás entrando antes que la mayoría.</p>
         <p class="text-gold text-sm font-semibold mt-3">200% – 250% en distribución directa</p>
       </div>
 
@@ -495,7 +499,13 @@
 
     <div class="p-6 rounded-2xl bg-gold/10 border border-gold/30">
       <p class="text-white font-semibold">Además contarás con <span class="text-gold">guía y asesoramiento personalizado de Cris y su equipo</span> — en línea y presencial.</p>
-      <p class="text-white/60 text-sm mt-2">No caminas solo. Caminas con un sistema.</p>
+      <p class="text-white/60 text-base mt-2">No caminas solo. Caminas con un sistema.</p>
+    </div>
+
+    <div class="text-center mt-10">
+      <a href="#formulario" class="btn-primary inline-block px-8 py-3 rounded-full text-base">
+        Quiero entrar al sistema →
+      </a>
     </div>
 
   </div>
@@ -696,13 +706,23 @@
 
     <div class="p-8 md:p-12 rounded-3xl border border-gold/40 bg-gold/5 text-center">
 
+      <!-- Social proof refuerza la decisión -->
+      <div class="flex items-center justify-center gap-3 mb-6">
+        <div class="flex -space-x-2">
+          <div class="w-8 h-8 rounded-full bg-gold/30 border-2 border-navy flex items-center justify-center text-xs font-black text-gold">I</div>
+          <div class="w-8 h-8 rounded-full bg-gold/20 border-2 border-navy flex items-center justify-center text-xs font-black text-gold">M</div>
+          <div class="w-8 h-8 rounded-full bg-gold/25 border-2 border-navy flex items-center justify-center text-xs font-black text-gold">S</div>
+          <div class="w-8 h-8 rounded-full bg-gold/15 border-2 border-navy flex items-center justify-center text-xs font-black text-gold">+</div>
+        </div>
+        <p class="text-white/50 text-sm">Más de <span class="text-white font-semibold">3,000 personas</span> ya dieron este paso</p>
+      </div>
       <p class="text-gold text-sm font-semibold tracking-widest uppercase mb-4">El siguiente paso</p>
       <h2 class="text-3xl md:text-4xl font-black mb-4">
         Agenda tu llamada.<br/>
         <span class="text-gradient">Mañana tienes un negocio.</span>
       </h2>
-      <p class="text-white/60 mb-8">
-        30 minutos. Sin costo. Sin compromiso. Sal de esa llamada con información real para tomar la mejor decisión de tu vida.
+      <p class="text-white/60 text-base mb-8">
+        30 minutos. Sin costo. Sin compromiso. Sal de esa llamada con información real — y si decides arrancar, mañana ya tienes tu negocio activo.
       </p>
 
       <!-- FORMULARIO — conectar a Calendly, WhatsApp o CRM -->
@@ -780,7 +800,7 @@
           <span class="font-semibold text-white pr-4">¿Necesito experiencia en negocios o ventas?</span>
           <span class="faq-icon text-gold text-2xl flex-shrink-0 font-light">+</span>
         </button>
-        <div class="faq-answer px-5 pb-5 text-white/60 text-sm leading-relaxed">
+        <div class="faq-answer px-5 pb-5 text-white/60 text-base leading-relaxed">
           No. Christopher empezó sin experiencia, sin contactos y sin capital. El sistema está diseñado para personas que arrancan desde cero. La academia te da las herramientas desde el día uno y el equipo está ahí para guiarte.
         </div>
       </div>
@@ -790,7 +810,7 @@
           <span class="font-semibold text-white pr-4">¿Cuánto tiempo necesito dedicarle?</span>
           <span class="faq-icon text-gold text-2xl flex-shrink-0 font-light">+</span>
         </button>
-        <div class="faq-answer px-5 pb-5 text-white/60 text-sm leading-relaxed">
+        <div class="faq-answer px-5 pb-5 text-white/60 text-base leading-relaxed">
           Depende de tus metas. Hay personas que lo manejan como ingreso adicional con pocas horas a la semana, y hay quienes lo convierten en su actividad principal. Tú defines el ritmo. Lo hablamos en la llamada.
         </div>
       </div>
@@ -800,7 +820,7 @@
           <span class="font-semibold text-white pr-4">¿Cuánto dinero necesito para empezar?</span>
           <span class="faq-icon text-gold text-2xl flex-shrink-0 font-light">+</span>
         </button>
-        <div class="faq-answer px-5 pb-5 text-white/60 text-sm leading-relaxed">
+        <div class="faq-answer px-5 pb-5 text-white/60 text-base leading-relaxed">
           Lo hablamos en la llamada. Los rangos varían según el nivel de franquicia que elijas. No hay cifra única ni compromiso antes de que tengas toda la información clara.
         </div>
       </div>
@@ -810,7 +830,7 @@
           <span class="font-semibold text-white pr-4">¿Funciona en mi país?</span>
           <span class="faq-icon text-gold text-2xl flex-shrink-0 font-light">+</span>
         </button>
-        <div class="faq-answer px-5 pb-5 text-white/60 text-sm leading-relaxed">
+        <div class="faq-answer px-5 pb-5 text-white/60 text-base leading-relaxed">
           La empresa opera legalmente en más de 80 países. En la llamada confirmamos disponibilidad para tu ubicación específica.
         </div>
       </div>
@@ -820,7 +840,7 @@
           <span class="font-semibold text-white pr-4">¿Tengo que venderle a mis amigos y familia?</span>
           <span class="faq-icon text-gold text-2xl flex-shrink-0 font-light">+</span>
         </button>
-        <div class="faq-answer px-5 pb-5 text-white/60 text-sm leading-relaxed">
+        <div class="faq-answer px-5 pb-5 text-white/60 text-base leading-relaxed">
           No obligatoriamente. El modelo tiene estrategias de expansión online que no requieren listas de contactos ni incomodar a nadie. Eso también lo vemos en la llamada.
         </div>
       </div>
@@ -830,7 +850,7 @@
           <span class="font-semibold text-white pr-4">¿Qué tan real es la promesa de las 24 horas?</span>
           <span class="faq-icon text-gold text-2xl flex-shrink-0 font-light">+</span>
         </button>
-        <div class="faq-answer px-5 pb-5 text-white/60 text-sm leading-relaxed">
+        <div class="faq-answer px-5 pb-5 text-white/60 text-base leading-relaxed">
           100% real. La plataforma es digital y el proceso de activación es inmediato. En la misma llamada arrancamos con los primeros pasos. El plan de acción te lo entregamos ese mismo día. Lo que construyes después depende de ti — pero el inicio, en 24 horas.
         </div>
       </div>

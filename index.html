@@ -546,6 +546,15 @@
     <!-- Fade borde derecho -->
     <div class="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none" style="background:linear-gradient(to left,#111111 30%,transparent 100%)"></div>
 
+    <!-- Flecha izquierda -->
+    <button id="t-prev" onclick="scrollCarousel(-1)" aria-label="Anterior" class="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full flex items-center justify-center transition-all" style="background:rgba(20,20,20,0.9);border:1px solid rgba(201,162,39,0.35);">
+      <svg class="w-4 h-4 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+    </button>
+    <!-- Flecha derecha -->
+    <button id="t-next" onclick="scrollCarousel(1)" aria-label="Siguiente" class="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full flex items-center justify-center transition-all" style="background:rgba(20,20,20,0.9);border:1px solid rgba(201,162,39,0.35);">
+      <svg class="w-4 h-4 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+    </button>
+
     <div id="testimonials-track" class="testimonials-track" style="padding:0 5vw 4px;">
 
       <!-- Iván Tamayo -->
@@ -869,6 +878,12 @@
 
     // Opción B (comentar A y descomentar B): redirigir a Calendly
     // window.location.href = 'https://calendly.com/TU_LINK_AQUI';
+  }
+
+  // Carrusel — flechas
+  function scrollCarousel(dir) {
+    const track = document.getElementById('testimonials-track');
+    track.scrollBy({ left: dir * 216, behavior: 'smooth' });
   }
 
   // Carrusel — drag con mouse

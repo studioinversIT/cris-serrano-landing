@@ -891,8 +891,29 @@
     ytPlayer = new YT.Player('yt-player', {
       videoId: 'OKtKuEFD_WY',
       playerVars: { rel: 0, modestbranding: 1, cc_load_policy: 1, origin: window.location.origin },
-      events: { onStateChange: onPlayerStateChange }
+      events: { onStateChange: onPlayerStateChange, onError: onPlayerError }
     });
+  }
+
+  function onPlayerError() {
+    // Embedding bloqueado — mostrar fallback con thumbnail
+    var wrapper = document.getElementById('yt-player');
+    wrapper.style.background = 'url(https://img.youtube.com/vi/OKtKuEFD_WY/maxresdefault.jpg) center/cover no-repeat';
+    wrapper.innerHTML =
+      '<a href="https://youtu.be/OKtKuEFD_WY" target="_blank" rel="noopener" style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;height:100%;gap:16px;background:rgba(0,0,0,0.55);">' +
+        '<div style="width:72px;height:72px;border-radius:50%;background:rgba(201,162,39,0.9);display:flex;align-items:center;justify-content:center;">' +
+          '<svg width="28" height="28" fill="#0C0C0C" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>' +
+        '</div>' +
+        '<span style="color:#fff;font-size:14px;font-weight:600;letter-spacing:.5px;">Ver en YouTube →</span>' +
+      '</a>';
+    // Cambiar el lock indicator al modo manual
+    document.getElementById('progress-label').textContent = 'Mira los primeros 4 minutos en YouTube y vuelve aquí';
+    document.getElementById('video-progress').style.width = '0%';
+    var btn = document.createElement('button');
+    btn.textContent = 'Ya vi los primeros 4 minutos →';
+    btn.onclick = unlockContent;
+    btn.style.cssText = 'margin-top:20px;background:linear-gradient(135deg,#C9A227,#E8C14A);color:#0C0C0C;font-weight:800;padding:12px 28px;border-radius:999px;border:none;cursor:pointer;font-size:14px;';
+    document.getElementById('lock-indicator').appendChild(btn);
   }
 
   function onPlayerStateChange(e) {

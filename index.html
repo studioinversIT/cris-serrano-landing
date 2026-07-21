@@ -120,7 +120,17 @@
     </div>
 
     <div class="video-wrapper shadow-2xl shadow-black/80" style="border-radius:16px 16px 0 0; border:1px solid rgba(201,162,39,0.18); border-bottom:none;">
-      <div id="yt-player"></div>
+      <!-- Facade: thumbnail + botón play -->
+      <div id="vsl-facade" onclick="startVSL()" style="position:absolute;inset:0;cursor:pointer;background:#000 url('https://img.youtube.com/vi/OKtKuEFD_WY/maxresdefault.jpg') center/cover;border-radius:12px;">
+        <div style="position:absolute;inset:0;background:rgba(0,0,0,0.38);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;">
+          <div style="width:80px;height:80px;border-radius:50%;background:rgba(201,162,39,0.9);display:flex;align-items:center;justify-content:center;box-shadow:0 0 50px rgba(201,162,39,0.35);">
+            <svg width="34" height="34" fill="#0C0C0C" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <span style="color:rgba(255,255,255,0.85);font-size:13px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;">Reproducir video</span>
+        </div>
+      </div>
+      <!-- Iframe se inyecta aquí al hacer click -->
+      <div id="vsl-iframe" style="display:none;position:absolute;inset:0;"></div>
     </div>
 
     <!-- Trust bar debajo del video -->
@@ -592,7 +602,7 @@
 
       <!-- Iván Tamayo -->
       <div class="flex-shrink-0 flex flex-col rounded-2xl bg-navy-card card-border overflow-hidden" style="width:200px;scroll-snap-align:start">
-        <div class="shorts-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/Qn4EzzKWC5U?rel=0&modestbranding=1" title="Testimonio Iván Tamayo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe></div>
+        <a href="https://youtube.com/shorts/Qn4EzzKWC5U" target="_blank" rel="noopener" class="shorts-wrapper block" style="text-decoration:none;background:#111 url('https://i.ytimg.com/vi/Qn4EzzKWC5U/hqdefault.jpg') center/cover;"><div style="position:absolute;inset:0;background:rgba(0,0,0,0.28);display:flex;align-items:center;justify-content:center;"><div style="width:52px;height:52px;border-radius:50%;background:rgba(201,162,39,0.9);display:flex;align-items:center;justify-content:center;box-shadow:0 0 24px rgba(201,162,39,0.4);"><svg width="20" height="20" fill="#0C0C0C" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div></a>
         <div class="p-3 flex-1">
           <p class="text-white font-semibold text-xs">Iván Tamayo</p>
           <p class="text-white/40 text-xs mt-0.5">Chicago, IL</p>
@@ -602,7 +612,7 @@
 
       <!-- María García -->
       <div class="flex-shrink-0 flex flex-col rounded-2xl bg-navy-card card-border overflow-hidden" style="width:200px;scroll-snap-align:start">
-        <div class="shorts-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/aRS97yIEjqA?rel=0&modestbranding=1" title="Testimonio María García" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe></div>
+        <a href="https://youtube.com/shorts/aRS97yIEjqA" target="_blank" rel="noopener" class="shorts-wrapper block" style="text-decoration:none;background:#111 url('https://i.ytimg.com/vi/aRS97yIEjqA/hqdefault.jpg') center/cover;"><div style="position:absolute;inset:0;background:rgba(0,0,0,0.28);display:flex;align-items:center;justify-content:center;"><div style="width:52px;height:52px;border-radius:50%;background:rgba(201,162,39,0.9);display:flex;align-items:center;justify-content:center;box-shadow:0 0 24px rgba(201,162,39,0.4);"><svg width="20" height="20" fill="#0C0C0C" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div></a>
         <div class="p-3 flex-1">
           <p class="text-white font-semibold text-xs">María García</p>
           <p class="text-white/40 text-xs mt-0.5">Kearny, NJ</p>
@@ -612,7 +622,7 @@
 
       <!-- Sandra Ordóñez -->
       <div class="flex-shrink-0 flex flex-col rounded-2xl bg-navy-card card-border overflow-hidden" style="width:200px;scroll-snap-align:start">
-        <div class="shorts-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/znZG9QPDE5Y?rel=0&modestbranding=1" title="Testimonio Sandra Ordóñez" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe></div>
+        <a href="https://youtube.com/shorts/znZG9QPDE5Y" target="_blank" rel="noopener" class="shorts-wrapper block" style="text-decoration:none;background:#111 url('https://i.ytimg.com/vi/znZG9QPDE5Y/hqdefault.jpg') center/cover;"><div style="position:absolute;inset:0;background:rgba(0,0,0,0.28);display:flex;align-items:center;justify-content:center;"><div style="width:52px;height:52px;border-radius:50%;background:rgba(201,162,39,0.9);display:flex;align-items:center;justify-content:center;box-shadow:0 0 24px rgba(201,162,39,0.4);"><svg width="20" height="20" fill="#0C0C0C" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div></a>
         <div class="p-3 flex-1">
           <p class="text-white font-semibold text-xs">Sandra Ordóñez</p>
           <p class="text-white/40 text-xs mt-0.5">Port Chester, NY</p>
@@ -622,7 +632,7 @@
 
       <!-- Jhon Ascuntar -->
       <div class="flex-shrink-0 flex flex-col rounded-2xl bg-navy-card card-border overflow-hidden" style="width:200px;scroll-snap-align:start">
-        <div class="shorts-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/FK_Rv4Fx40Y?rel=0&modestbranding=1" title="Testimonio Jhon Ascuntar" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe></div>
+        <a href="https://youtube.com/shorts/FK_Rv4Fx40Y" target="_blank" rel="noopener" class="shorts-wrapper block" style="text-decoration:none;background:#111 url('https://i.ytimg.com/vi/FK_Rv4Fx40Y/hqdefault.jpg') center/cover;"><div style="position:absolute;inset:0;background:rgba(0,0,0,0.28);display:flex;align-items:center;justify-content:center;"><div style="width:52px;height:52px;border-radius:50%;background:rgba(201,162,39,0.9);display:flex;align-items:center;justify-content:center;box-shadow:0 0 24px rgba(201,162,39,0.4);"><svg width="20" height="20" fill="#0C0C0C" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div></a>
         <div class="p-3 flex-1">
           <p class="text-white font-semibold text-xs">Jhon Ascuntar</p>
           <p class="text-white/40 text-xs mt-0.5">Dayton, OH</p>
@@ -632,7 +642,7 @@
 
       <!-- María Guanuchi -->
       <div class="flex-shrink-0 flex flex-col rounded-2xl bg-navy-card card-border overflow-hidden" style="width:200px;scroll-snap-align:start">
-        <div class="shorts-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/tRt5Ly99ldM?rel=0&modestbranding=1" title="Testimonio María Guanuchi" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe></div>
+        <a href="https://youtube.com/shorts/tRt5Ly99ldM" target="_blank" rel="noopener" class="shorts-wrapper block" style="text-decoration:none;background:#111 url('https://i.ytimg.com/vi/tRt5Ly99ldM/hqdefault.jpg') center/cover;"><div style="position:absolute;inset:0;background:rgba(0,0,0,0.28);display:flex;align-items:center;justify-content:center;"><div style="width:52px;height:52px;border-radius:50%;background:rgba(201,162,39,0.9);display:flex;align-items:center;justify-content:center;box-shadow:0 0 24px rgba(201,162,39,0.4);"><svg width="20" height="20" fill="#0C0C0C" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div></a>
         <div class="p-3 flex-1">
           <p class="text-white font-semibold text-xs">María Guanuchi</p>
           <p class="text-white/40 text-xs mt-0.5">Newark, NJ</p>
@@ -642,7 +652,7 @@
 
       <!-- Tonaly Pacheco -->
       <div class="flex-shrink-0 flex flex-col rounded-2xl bg-navy-card card-border overflow-hidden" style="width:200px;scroll-snap-align:start">
-        <div class="shorts-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/4GSFTfplIwM?rel=0&modestbranding=1" title="Testimonio Tonaly Pacheco" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe></div>
+        <a href="https://youtube.com/shorts/4GSFTfplIwM" target="_blank" rel="noopener" class="shorts-wrapper block" style="text-decoration:none;background:#111 url('https://i.ytimg.com/vi/4GSFTfplIwM/hqdefault.jpg') center/cover;"><div style="position:absolute;inset:0;background:rgba(0,0,0,0.28);display:flex;align-items:center;justify-content:center;"><div style="width:52px;height:52px;border-radius:50%;background:rgba(201,162,39,0.9);display:flex;align-items:center;justify-content:center;box-shadow:0 0 24px rgba(201,162,39,0.4);"><svg width="20" height="20" fill="#0C0C0C" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div></a>
         <div class="p-3 flex-1">
           <p class="text-white font-semibold text-xs">Tonaly Pacheco</p>
           <p class="text-white/40 text-xs mt-0.5">Monterrey, MEX</p>
@@ -876,70 +886,47 @@
 </footer>
 
 
-<!-- YouTube IFrame API -->
-<script src="https://www.youtube.com/iframe_api"></script>
-
 <!-- ═══════════════════════════════════════════
      JAVASCRIPT
 ════════════════════════════════════════════ -->
 <script>
-  // ── YouTube IFrame API — content lock al minuto 4 ──────────────────
-  var ytPlayer, contentUnlocked = false, watchInterval;
+  // ── VSL facade + timer-based content lock al minuto 4 ────────────
+  var contentUnlocked = false, unlockTimer, timerElapsed = 0;
   var UNLOCK_AT = 240; // segundos (4 minutos)
 
-  function onYouTubeIframeAPIReady() {
-    ytPlayer = new YT.Player('yt-player', {
-      videoId: 'OKtKuEFD_WY',
-      host: 'https://www.youtube-nocookie.com',
-      playerVars: { rel: 0, modestbranding: 1, cc_load_policy: 1 },
-      events: { onStateChange: onPlayerStateChange, onError: onPlayerError }
-    });
+  function startVSL() {
+    // Inyectar iframe con autoplay
+    var container = document.getElementById('vsl-iframe');
+    container.style.display = 'block';
+    container.innerHTML =
+      '<iframe src="https://www.youtube-nocookie.com/embed/OKtKuEFD_WY?autoplay=1&rel=0&modestbranding=1" ' +
+      'style="position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:12px;" ' +
+      'allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ' +
+      'allowfullscreen></iframe>';
+    // Ocultar facade
+    document.getElementById('vsl-facade').style.display = 'none';
+    // Arrancar timer
+    startUnlockTimer();
   }
 
-  function onPlayerError() {
-    // Embedding bloqueado — mostrar fallback con thumbnail
-    var wrapper = document.getElementById('yt-player');
-    wrapper.style.background = 'url(https://img.youtube.com/vi/OKtKuEFD_WY/maxresdefault.jpg) center/cover no-repeat';
-    wrapper.innerHTML =
-      '<a href="https://youtu.be/OKtKuEFD_WY" target="_blank" rel="noopener" style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;height:100%;gap:16px;background:rgba(0,0,0,0.55);">' +
-        '<div style="width:72px;height:72px;border-radius:50%;background:rgba(201,162,39,0.9);display:flex;align-items:center;justify-content:center;">' +
-          '<svg width="28" height="28" fill="#0C0C0C" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>' +
-        '</div>' +
-        '<span style="color:#fff;font-size:14px;font-weight:600;letter-spacing:.5px;">Ver en YouTube →</span>' +
-      '</a>';
-    // Cambiar el lock indicator al modo manual
-    document.getElementById('progress-label').textContent = 'Mira los primeros 4 minutos en YouTube y vuelve aquí';
-    document.getElementById('video-progress').style.width = '0%';
-    var btn = document.createElement('button');
-    btn.textContent = 'Ya vi los primeros 4 minutos →';
-    btn.onclick = unlockContent;
-    btn.style.cssText = 'margin-top:20px;background:linear-gradient(135deg,#C9A227,#E8C14A);color:#0C0C0C;font-weight:800;padding:12px 28px;border-radius:999px;border:none;cursor:pointer;font-size:14px;';
-    document.getElementById('lock-indicator').appendChild(btn);
-  }
-
-  function onPlayerStateChange(e) {
-    if (e.data === YT.PlayerState.PLAYING) {
-      watchInterval = setInterval(checkProgress, 4000);
-    } else {
-      clearInterval(watchInterval);
-    }
-  }
-
-  function checkProgress() {
-    if (contentUnlocked || !ytPlayer || !ytPlayer.getCurrentTime) return;
-    var t = ytPlayer.getCurrentTime();
-    var pct = Math.min((t / UNLOCK_AT) * 100, 100);
-    document.getElementById('video-progress').style.width = pct + '%';
-    var m = Math.floor(t / 60), s = Math.floor(t % 60);
-    document.getElementById('progress-label').textContent =
-      m + ':' + (s < 10 ? '0' : '') + s + ' de 4:00';
-    if (t >= UNLOCK_AT) unlockContent();
+  function startUnlockTimer() {
+    if (unlockTimer) return;
+    unlockTimer = setInterval(function() {
+      if (contentUnlocked) { clearInterval(unlockTimer); return; }
+      timerElapsed++;
+      var pct = Math.min((timerElapsed / UNLOCK_AT) * 100, 100);
+      document.getElementById('video-progress').style.width = pct + '%';
+      var m = Math.floor(timerElapsed / 60), s = timerElapsed % 60;
+      document.getElementById('progress-label').textContent =
+        m + ':' + (s < 10 ? '0' : '') + s + ' de 4:00';
+      if (timerElapsed >= UNLOCK_AT) unlockContent();
+    }, 1000);
   }
 
   function unlockContent() {
     if (contentUnlocked) return;
     contentUnlocked = true;
-    clearInterval(watchInterval);
+    clearInterval(unlockTimer);
 
     var locked = document.getElementById('locked-content');
     var indicator = document.getElementById('lock-indicator');

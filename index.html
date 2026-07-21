@@ -52,8 +52,11 @@
     .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(201,162,39,0.5), 0 0 0 3px rgba(201,162,39,0.4); }
     .video-wrapper     { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; }
     .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; border-radius: 12px; }
-    .shorts-wrapper    { position: relative; padding-bottom: 177.78%; height: 0; overflow: hidden; border-radius: 12px; }
-    .shorts-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; border-radius: 12px; }
+    .shorts-wrapper    { position: relative; padding-bottom: 177.78%; height: 0; overflow: hidden; border-radius: 12px 12px 0 0; }
+    .shorts-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+    .testimonials-track { display:flex; gap:1rem; overflow-x:auto; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; scrollbar-width:none; -ms-overflow-style:none; padding-bottom:4px; cursor:grab; }
+    .testimonials-track::-webkit-scrollbar { display:none; }
+    .testimonials-track.dragging { cursor:grabbing; }
     .sticky-cta        { position: sticky; top: 0; z-index: 50; background: rgba(12,12,12,0.97); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(201,162,39,0.12); }
     .faq-answer        { display: none; }
     .faq-answer.open   { display: block; }
@@ -534,113 +537,88 @@
       Lo que dicen las personas<br/>que empezaron donde tú estás ahora
     </h2>
 
-    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mb-12">
+    <!-- Carrusel de testimonios -->
+    <div class="relative mb-12 -mx-4">
+      <!-- Fade izquierda -->
+      <div class="absolute left-0 top-0 bottom-1 w-16 z-10 pointer-events-none" style="background:linear-gradient(to right,#111111 40%,transparent)"></div>
+      <!-- Fade derecha -->
+      <div class="absolute right-0 top-0 bottom-1 w-16 z-10 pointer-events-none" style="background:linear-gradient(to left,#111111 40%,transparent)"></div>
 
-      <!-- Testimonio — Iván Tamayo -->
-      <div class="rounded-2xl bg-navy-card card-border overflow-hidden flex flex-col">
-        <div class="shorts-wrapper">
-          <iframe
-            src="https://www.youtube-nocookie.com/embed/Qn4EzzKWC5U?rel=0&modestbranding=1"
-            title="Testimonio Iván Tamayo"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            loading="lazy"
-            allowfullscreen>
-          </iframe>
-        </div>
-        <div class="p-4 flex items-center gap-3">
-          <div class="w-9 h-9 rounded-full bg-gold/20 flex items-center justify-center text-gold font-black text-xs flex-shrink-0">IT</div>
-          <div>
-            <p class="text-white font-semibold text-sm">Iván Tamayo</p>
-            <p class="text-white/40 text-xs">Chicago, IL</p>
+      <div id="testimonials-track" class="testimonials-track px-8">
+
+        <!-- Iván Tamayo -->
+        <div class="flex-shrink-0 rounded-2xl bg-navy-card card-border overflow-hidden flex flex-col" style="width:190px;scroll-snap-align:start">
+          <div class="shorts-wrapper">
+            <iframe src="https://www.youtube-nocookie.com/embed/Qn4EzzKWC5U?rel=0&modestbranding=1" title="Testimonio Iván Tamayo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
           </div>
-          <span class="ml-auto text-gold text-sm">★★★★★</span>
-        </div>
-      </div>
-
-      <!-- Testimonio — María García -->
-      <div class="rounded-2xl bg-navy-card card-border overflow-hidden flex flex-col">
-        <div class="shorts-wrapper">
-          <iframe
-            src="https://www.youtube-nocookie.com/embed/aRS97yIEjqA?rel=0&modestbranding=1"
-            title="Testimonio María García"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            loading="lazy"
-            allowfullscreen>
-          </iframe>
-        </div>
-        <div class="p-4 flex items-center gap-3">
-          <div class="w-9 h-9 rounded-full bg-gold/20 flex items-center justify-center text-gold font-black text-xs flex-shrink-0">MG</div>
-          <div>
-            <p class="text-white font-semibold text-sm">María García</p>
-            <p class="text-white/40 text-xs">Kearny, NJ</p>
+          <div class="p-3">
+            <p class="text-white font-semibold text-xs">Iván Tamayo</p>
+            <p class="text-white/40 text-xs mt-0.5">Chicago, IL</p>
+            <span class="text-gold text-xs mt-1 block">★★★★★</span>
           </div>
-          <span class="ml-auto text-gold text-sm">★★★★★</span>
         </div>
-      </div>
 
-      <!-- Testimonio — Sandra Ordóñez -->
-      <div class="rounded-2xl bg-navy-card card-border overflow-hidden flex flex-col">
-        <div class="shorts-wrapper">
-          <iframe
-            src="https://www.youtube-nocookie.com/embed/znZG9QPDE5Y?rel=0&modestbranding=1"
-            title="Testimonio Sandra Ordóñez"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            loading="lazy"
-            allowfullscreen>
-          </iframe>
-        </div>
-        <div class="p-4 flex items-center gap-3">
-          <div class="w-9 h-9 rounded-full bg-gold/20 flex items-center justify-center text-gold font-black text-xs flex-shrink-0">SO</div>
-          <div>
-            <p class="text-white font-semibold text-sm">Sandra Ordóñez</p>
-            <p class="text-white/40 text-xs">Port Chester, NY</p>
+        <!-- María García -->
+        <div class="flex-shrink-0 rounded-2xl bg-navy-card card-border overflow-hidden flex flex-col" style="width:190px;scroll-snap-align:start">
+          <div class="shorts-wrapper">
+            <iframe src="https://www.youtube-nocookie.com/embed/aRS97yIEjqA?rel=0&modestbranding=1" title="Testimonio María García" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
           </div>
-          <span class="ml-auto text-gold text-sm">★★★★★</span>
-        </div>
-      </div>
-
-      <!-- Testimonio — Jhon Ascuntar -->
-      <div class="rounded-2xl bg-navy-card card-border overflow-hidden flex flex-col">
-        <div class="shorts-wrapper">
-          <iframe
-            src="https://www.youtube-nocookie.com/embed/FK_Rv4Fx40Y?rel=0&modestbranding=1"
-            title="Testimonio Jhon Ascuntar"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            loading="lazy"
-            allowfullscreen>
-          </iframe>
-        </div>
-        <div class="p-4 flex items-center gap-3">
-          <div class="w-9 h-9 rounded-full bg-gold/20 flex items-center justify-center text-gold font-black text-xs flex-shrink-0">JA</div>
-          <div>
-            <p class="text-white font-semibold text-sm">Jhon Ascuntar</p>
-            <p class="text-white/40 text-xs">Dayton, OH</p>
+          <div class="p-3">
+            <p class="text-white font-semibold text-xs">María García</p>
+            <p class="text-white/40 text-xs mt-0.5">Kearny, NJ</p>
+            <span class="text-gold text-xs mt-1 block">★★★★★</span>
           </div>
-          <span class="ml-auto text-gold text-sm">★★★★★</span>
         </div>
-      </div>
 
-      <!-- Testimonio — María Guanuchi -->
-      <div class="rounded-2xl bg-navy-card card-border overflow-hidden flex flex-col">
-        <div class="shorts-wrapper">
-          <iframe
-            src="https://www.youtube-nocookie.com/embed/tRt5Ly99ldM?rel=0&modestbranding=1"
-            title="Testimonio María Guanuchi"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            loading="lazy"
-            allowfullscreen>
-          </iframe>
-        </div>
-        <div class="p-4 flex items-center gap-3">
-          <div class="w-9 h-9 rounded-full bg-gold/20 flex items-center justify-center text-gold font-black text-xs flex-shrink-0">MG</div>
-          <div>
-            <p class="text-white font-semibold text-sm">María Guanuchi</p>
-            <p class="text-white/40 text-xs">Newark, NJ</p>
+        <!-- Sandra Ordóñez -->
+        <div class="flex-shrink-0 rounded-2xl bg-navy-card card-border overflow-hidden flex flex-col" style="width:190px;scroll-snap-align:start">
+          <div class="shorts-wrapper">
+            <iframe src="https://www.youtube-nocookie.com/embed/znZG9QPDE5Y?rel=0&modestbranding=1" title="Testimonio Sandra Ordóñez" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
           </div>
-          <span class="ml-auto text-gold text-sm">★★★★★</span>
+          <div class="p-3">
+            <p class="text-white font-semibold text-xs">Sandra Ordóñez</p>
+            <p class="text-white/40 text-xs mt-0.5">Port Chester, NY</p>
+            <span class="text-gold text-xs mt-1 block">★★★★★</span>
+          </div>
         </div>
-      </div>
 
+        <!-- Jhon Ascuntar -->
+        <div class="flex-shrink-0 rounded-2xl bg-navy-card card-border overflow-hidden flex flex-col" style="width:190px;scroll-snap-align:start">
+          <div class="shorts-wrapper">
+            <iframe src="https://www.youtube-nocookie.com/embed/FK_Rv4Fx40Y?rel=0&modestbranding=1" title="Testimonio Jhon Ascuntar" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
+          </div>
+          <div class="p-3">
+            <p class="text-white font-semibold text-xs">Jhon Ascuntar</p>
+            <p class="text-white/40 text-xs mt-0.5">Dayton, OH</p>
+            <span class="text-gold text-xs mt-1 block">★★★★★</span>
+          </div>
+        </div>
+
+        <!-- María Guanuchi -->
+        <div class="flex-shrink-0 rounded-2xl bg-navy-card card-border overflow-hidden flex flex-col" style="width:190px;scroll-snap-align:start">
+          <div class="shorts-wrapper">
+            <iframe src="https://www.youtube-nocookie.com/embed/tRt5Ly99ldM?rel=0&modestbranding=1" title="Testimonio María Guanuchi" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
+          </div>
+          <div class="p-3">
+            <p class="text-white font-semibold text-xs">María Guanuchi</p>
+            <p class="text-white/40 text-xs mt-0.5">Newark, NJ</p>
+            <span class="text-gold text-xs mt-1 block">★★★★★</span>
+          </div>
+        </div>
+
+        <!-- Tonaly Pacheco -->
+        <div class="flex-shrink-0 rounded-2xl bg-navy-card card-border overflow-hidden flex flex-col" style="width:190px;scroll-snap-align:start">
+          <div class="shorts-wrapper">
+            <iframe src="https://www.youtube-nocookie.com/embed/4GSFTfplIwM?rel=0&modestbranding=1" title="Testimonio Tonaly Pacheco" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
+          </div>
+          <div class="p-3">
+            <p class="text-white font-semibold text-xs">Tonaly Pacheco</p>
+            <p class="text-white/40 text-xs mt-0.5">Monterrey, MEX</p>
+            <span class="text-gold text-xs mt-1 block">★★★★★</span>
+          </div>
+        </div>
+
+      </div>
     </div>
 
     <!-- Stats sociales -->
@@ -901,6 +879,20 @@
     // Opción B (comentar A y descomentar B): redirigir a Calendly
     // window.location.href = 'https://calendly.com/TU_LINK_AQUI';
   }
+
+  // Carrusel — drag con mouse
+  const track = document.getElementById('testimonials-track');
+  let isDragging = false, startX, scrollLeft;
+  track.addEventListener('mousedown', e => {
+    isDragging = true; track.classList.add('dragging');
+    startX = e.pageX - track.offsetLeft; scrollLeft = track.scrollLeft;
+  });
+  document.addEventListener('mouseup', () => { isDragging = false; track.classList.remove('dragging'); });
+  track.addEventListener('mousemove', e => {
+    if (!isDragging) return;
+    e.preventDefault();
+    track.scrollLeft = scrollLeft - (e.pageX - track.offsetLeft - startX) * 1.2;
+  });
 
   // Smooth scroll para los anchor links
   document.querySelectorAll('a[href^="#"]').forEach(a => {

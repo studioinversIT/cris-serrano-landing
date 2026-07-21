@@ -274,12 +274,22 @@
     </div>
 
     <!-- Foto + credenciales -->
-    <div class="mt-12 p-6 rounded-2xl card-border bg-navy-card flex flex-col sm:flex-row items-center gap-6">
-      <img src="cris.jpg" alt="Christopher Serrano" class="w-24 h-24 rounded-full object-cover border-2 border-gold flex-shrink-0" />
-      <div>
-        <p class="font-bold text-white text-lg">Christopher Serrano</p>
-        <p class="text-white/50 text-sm mt-1">Emprendedor · Mentor de negocios · Reconocido en revista de negocios internacional</p>
-        <p class="text-gold text-sm mt-2 font-semibold">$12,500+ por quincena · 3 años en el sistema</p>
+    <div class="mt-12 rounded-2xl card-border bg-navy-card overflow-hidden">
+      <div class="flex flex-col sm:flex-row">
+        <div class="sm:w-56 flex-shrink-0">
+          <img src="cris.jpg" alt="Christopher Serrano" class="w-full h-64 sm:h-full object-cover object-top" />
+        </div>
+        <div class="p-7 flex flex-col justify-center">
+          <p class="text-gold text-xs font-semibold tracking-widest uppercase mb-3">Quién te acompaña</p>
+          <p class="font-black text-white text-2xl mb-2">Christopher Serrano</p>
+          <p class="text-white/50 text-sm leading-relaxed mb-4">Emprendedor · Mentor de negocios · Reconocido en revista de negocios internacional</p>
+          <div class="flex items-center gap-3">
+            <div class="h-px flex-1 bg-gold/20"></div>
+            <p class="text-gold font-black text-lg">$12,500+ por quincena</p>
+            <div class="h-px flex-1 bg-gold/20"></div>
+          </div>
+          <p class="text-white/30 text-xs mt-2 text-center">3 años en el sistema</p>
+        </div>
       </div>
     </div>
 

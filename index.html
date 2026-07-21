@@ -57,6 +57,10 @@
     .testimonials-track { display:flex; gap:1rem; overflow-x:auto; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; scrollbar-width:none; -ms-overflow-style:none; padding-bottom:4px; cursor:grab; }
     .testimonials-track::-webkit-scrollbar { display:none; }
     .testimonials-track.dragging { cursor:grabbing; }
+    #yt-player { position:absolute; top:0; left:0; width:100%; height:100%; }
+    #yt-player iframe { width:100%; height:100%; border:0; border-radius:12px; }
+    #locked-content { transition: opacity 0.8s ease; }
+    .lock-fade-in { animation: fadeUp 0.8s ease both; }
     .sticky-cta        { position: sticky; top: 0; z-index: 50; background: rgba(12,12,12,0.97); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(201,162,39,0.12); }
     .faq-answer        { display: none; }
     .faq-answer.open   { display: block; }
@@ -76,8 +80,8 @@
 <nav class="sticky-cta py-3 px-4">
   <div class="max-w-5xl mx-auto flex items-center justify-between">
     <span class="text-sm font-semibold text-white/70">Cris Serrano · Sistema de Negocios</span>
-    <a href="#formulario" class="btn-primary text-sm px-5 rounded-full inline-flex items-center" style="min-height:48px">
-      Quiero mi llamada gratis →
+    <a href="#vsl" id="nav-cta" class="btn-primary text-sm px-5 rounded-full inline-flex items-center" style="min-height:48px">
+      Ver el video →
     </a>
   </div>
 </nav>
@@ -86,103 +90,76 @@
 <!-- ═══════════════════════════════════════════
      HERO + VSL
 ════════════════════════════════════════════ -->
-<section class="gradient-hero min-h-screen flex items-center py-20 px-6">
-  <div class="max-w-7xl mx-auto w-full">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+<section class="gradient-hero pt-16 pb-0 px-4">
+  <div class="max-w-3xl mx-auto text-center animate-fade-up">
 
-      <!-- ── Columna izquierda: Promesa ── -->
-      <div class="animate-fade-up">
+    <!-- Eyebrow -->
+    <div class="inline-flex items-center gap-2 bg-gold/10 border border-gold/30 rounded-full px-4 py-2 mb-8">
+      <span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
+      <span class="text-gold text-sm font-semibold tracking-wide">Sin experiencia. Sin contactos. Sin saber por dónde empezar.</span>
+    </div>
 
-        <!-- Eyebrow -->
-        <div class="inline-flex items-center gap-2 bg-gold/10 border border-gold/30 rounded-full px-4 py-2 mb-8">
-          <span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
-          <span class="text-gold text-sm font-semibold tracking-wide">Sin experiencia. Sin contactos. Sin saber por dónde empezar.</span>
-        </div>
+    <!-- Headline -->
+    <h1 class="hero-headline text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] mb-6">
+      Más de 3,000 personas sin experiencia previa<br/>ya tienen su negocio armado.<br/>
+      <span class="text-gradient">Tú puedes ser el siguiente.</span>
+    </h1>
 
-        <!-- Headline -->
-        <h1 class="hero-headline text-4xl md:text-5xl lg:text-[3.25rem] font-black leading-[1.1] mb-6">
-          Más de 3,000 personas sin experiencia previa<br/>ya tienen su negocio armado.<br/>
-          <span class="text-gradient">Tú puedes ser el siguiente.</span>
-        </h1>
+    <!-- Subheadline -->
+    <p class="text-lg text-white/70 leading-relaxed mb-2 max-w-2xl mx-auto">
+      En menos de 24 horas tu negocio está armado, activo y operando — con todo listo para generar ingresos desde el primer día.
+    </p>
+    <p class="text-base text-white/45 leading-relaxed mb-10 max-w-xl mx-auto">
+      Sin trámites. Sin espera. Sin inventar nada. Mira el video completo y descubre cómo funciona.
+    </p>
 
-        <!-- Subheadline -->
-        <p class="text-lg text-white/70 leading-relaxed mb-3">
-          En menos de 24 horas tu negocio está armado, activo y operando — con todo listo para generar ingresos desde el primer día.
-        </p>
-        <p class="text-base text-white/50 leading-relaxed mb-10">
-          Sin trámites. Sin espera. Sin inventar nada. Mira el video y descubre cómo funciona el sistema.
-        </p>
+    <!-- Trust bar compacta -->
+    <div class="flex flex-wrap justify-center gap-6 mb-12 pb-10 border-b border-white/8">
+      <div><p class="text-xl font-black text-gold">+80</p><p class="text-white/35 text-xs mt-0.5">países</p></div>
+      <div class="w-px bg-white/10 hidden sm:block"></div>
+      <div><p class="text-xl font-black text-gold">$12,500</p><p class="text-white/35 text-xs mt-0.5">por quincena</p></div>
+      <div class="w-px bg-white/10 hidden sm:block"></div>
+      <div><p class="text-xl font-black text-gold">+3,000</p><p class="text-white/35 text-xs mt-0.5">personas en el sistema</p></div>
+      <div class="w-px bg-white/10 hidden sm:block"></div>
+      <div><p class="text-xl font-black text-gold">&lt;24h</p><p class="text-white/35 text-xs mt-0.5">negocio activo</p></div>
+    </div>
 
-        <!-- CTA -->
-        <a href="#vsl" class="btn-primary inline-block text-base px-8 py-4 rounded-full animate-pulse-glow mb-3">
-          Ver cómo funciona →
-        </a>
-        <p class="text-white/40 text-sm">Sin costo · Sin compromiso · 9 minutos</p>
+  </div>
 
-        <!-- Trust bar -->
-        <div class="flex flex-wrap gap-6 mt-10 pt-8 border-t border-white/10">
-          <div>
-            <p class="text-xl font-black text-gold">+80</p>
-            <p class="text-white/40 text-xs mt-0.5">países</p>
-          </div>
-          <div class="w-px bg-white/10 hidden sm:block"></div>
-          <div>
-            <p class="text-xl font-black text-gold">$12,500</p>
-            <p class="text-white/40 text-xs mt-0.5">por quincena</p>
-          </div>
-          <div class="w-px bg-white/10 hidden sm:block"></div>
-          <div>
-            <p class="text-xl font-black text-gold">+3,000</p>
-            <p class="text-white/40 text-xs mt-0.5">personas en el sistema</p>
-          </div>
-          <div class="w-px bg-white/10 hidden sm:block"></div>
-          <div>
-            <p class="text-xl font-black text-gold">&lt;24h</p>
-            <p class="text-white/40 text-xs mt-0.5">negocio activo</p>
-          </div>
-        </div>
+  <!-- VSL — full bleed hacia abajo -->
+  <div id="vsl" class="max-w-4xl mx-auto">
+    <div class="flex items-center justify-center gap-2 mb-3">
+      <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+      <p class="text-white/40 text-sm">Mira el video completo antes de continuar</p>
+    </div>
 
-      </div>
-
-      <!-- ── Columna derecha: VSL ── -->
-      <div id="vsl">
-
-        <!-- Label live -->
-        <div class="flex items-center gap-2 mb-3">
-          <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse flex-shrink-0"></span>
-          <p class="text-white/40 text-sm tracking-wide">Mira el video antes de agendar</p>
-        </div>
-
-        <!-- Video embed -->
-        <div class="video-wrapper border border-gold/20 shadow-2xl shadow-black/60">
-          <iframe
-            src="https://www.youtube-nocookie.com/embed/OKtKuEFD_WY?rel=0&modestbranding=1"
-            title="Cris Serrano — Presentación del Sistema"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            loading="lazy"
-            allowfullscreen>
-          </iframe>
-        </div>
-
-        <p class="text-white/25 text-xs mt-3 text-center">
-          9:02 min ·
-          <a href="https://youtu.be/OKtKuEFD_WY" target="_blank" rel="noopener" class="underline hover:text-white/50 transition-colors">Ver en YouTube →</a>
-        </p>
-
-        <!-- Micro-CTA bajo el video -->
-        <div class="mt-5 p-5 rounded-2xl card-border bg-navy-card flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p class="text-white/60 text-sm">¿Ya viste el video? Agenda tu llamada gratis.</p>
-          <a href="#formulario" class="btn-primary flex-shrink-0 px-6 py-2.5 rounded-full text-sm whitespace-nowrap">
-            Agenda hoy. Mañana tienes tu negocio. →
-          </a>
-        </div>
-
-      </div>
-
+    <div class="video-wrapper shadow-2xl shadow-black/80" style="border-radius:16px 16px 0 0; border:1px solid rgba(201,162,39,0.18); border-bottom:none;">
+      <div id="yt-player"></div>
     </div>
   </div>
 </section>
 
+<!-- Lock indicator — visible mientras no se alcanza el minuto 4 -->
+<div id="lock-indicator" class="py-14 px-4 text-center" style="background:linear-gradient(180deg,#0C0C0C 0%,#111111 100%)">
+  <div class="inline-flex flex-col items-center gap-5">
+    <svg class="w-7 h-7 text-white/20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/>
+    </svg>
+    <p class="text-white/35 text-sm tracking-wide">Sigue mirando para descubrir el sistema completo</p>
+    <div style="width:280px">
+      <div class="h-px rounded-full overflow-hidden" style="background:rgba(255,255,255,0.08)">
+        <div id="video-progress" class="h-full rounded-full transition-all duration-1000" style="width:0%;background:linear-gradient(90deg,#C9A227,#E8C14A)"></div>
+      </div>
+      <p id="progress-label" class="text-white/20 text-xs mt-3">0:00 de 4:00</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════
+     CONTENIDO BLOQUEADO — se activa al minuto 4 del VSL
+═══════════════════════════════════════════════════ -->
+<div id="locked-content" style="display:none;opacity:0">
 
 <!-- ═══════════════════════════════════════════
      AVATAR — ¿ERES TÚ?
@@ -890,6 +867,8 @@
 <!-- ═══════════════════════════════════════════
      FOOTER
 ════════════════════════════════════════════ -->
+</div><!-- /locked-content -->
+
 <footer class="py-10 px-4 bg-black/50 border-t border-white/5">
   <div class="max-w-3xl mx-auto text-center">
     <p class="text-white/30 text-sm mb-2">© 2025 Christopher Serrano · Todos los derechos reservados</p>
@@ -900,10 +879,73 @@
 </footer>
 
 
+<!-- YouTube IFrame API -->
+<script src="https://www.youtube.com/iframe_api"></script>
+
 <!-- ═══════════════════════════════════════════
      JAVASCRIPT
 ════════════════════════════════════════════ -->
 <script>
+  // ── YouTube IFrame API — content lock al minuto 4 ──────────────────
+  var ytPlayer, contentUnlocked = false, watchInterval;
+  var UNLOCK_AT = 240; // segundos (4 minutos)
+
+  function onYouTubeIframeAPIReady() {
+    ytPlayer = new YT.Player('yt-player', {
+      videoId: 'OKtKuEFD_WY',
+      playerVars: { rel: 0, modestbranding: 1, cc_load_policy: 1, origin: window.location.origin },
+      events: { onStateChange: onPlayerStateChange }
+    });
+  }
+
+  function onPlayerStateChange(e) {
+    if (e.data === YT.PlayerState.PLAYING) {
+      watchInterval = setInterval(checkProgress, 4000);
+    } else {
+      clearInterval(watchInterval);
+    }
+  }
+
+  function checkProgress() {
+    if (contentUnlocked || !ytPlayer || !ytPlayer.getCurrentTime) return;
+    var t = ytPlayer.getCurrentTime();
+    var pct = Math.min((t / UNLOCK_AT) * 100, 100);
+    document.getElementById('video-progress').style.width = pct + '%';
+    var m = Math.floor(t / 60), s = Math.floor(t % 60);
+    document.getElementById('progress-label').textContent =
+      m + ':' + (s < 10 ? '0' : '') + s + ' de 4:00';
+    if (t >= UNLOCK_AT) unlockContent();
+  }
+
+  function unlockContent() {
+    if (contentUnlocked) return;
+    contentUnlocked = true;
+    clearInterval(watchInterval);
+
+    var locked = document.getElementById('locked-content');
+    var indicator = document.getElementById('lock-indicator');
+
+    indicator.style.transition = 'opacity 0.4s ease';
+    indicator.style.opacity = '0';
+    setTimeout(function() { indicator.style.display = 'none'; }, 400);
+
+    locked.style.display = 'block';
+    setTimeout(function() { locked.style.opacity = '1'; }, 50);
+
+    // Reiniciar IntersectionObserver en las secciones desbloqueadas
+    document.querySelectorAll('#locked-content section').forEach(function(s) {
+      s.style.opacity = 0;
+      s.style.transform = 'translateY(20px)';
+      s.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(s);
+    });
+
+    // Actualizar nav CTA
+    var navCta = document.getElementById('nav-cta');
+    navCta.textContent = 'Quiero mi llamada gratis →';
+    navCta.href = '#formulario';
+  }
+
   // FAQ Toggle
   function toggleFaq(btn) {
     const answer = btn.nextElementSibling;
@@ -988,6 +1030,7 @@
   }, { threshold: 0.08 });
 
   document.querySelectorAll('section:not(:first-of-type)').forEach(section => {
+    if (section.closest('#locked-content')) return; // el unlock las maneja
     section.style.opacity   = 0;
     section.style.transform = 'translateY(20px)';
     section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';

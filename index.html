@@ -1125,6 +1125,21 @@
     window.open('https://wa.me/' + WA_NUMERO + '?text=' + mensaje, '_blank');
     document.getElementById('wa-modal').style.display = 'none';
     document.body.style.overflow = '';
+    fetch('https://services.leadconnectorhq.com/contacts/upsert', {
+      method: 'POST',
+      headers: {
+        'Authorization': 'Bearer pit-a59e34c6-5ece-4d0a-ab77-439bbf6d9e9e',
+        'Version': '2021-07-28',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        firstName: nombre,
+        phone: telefono,
+        locationId: 'CjCpBWugPe0lqapySOfW',
+        source: 'Landing Cris Serrano',
+        tags: ['landing-cris-serrano']
+      })
+    }).catch(function(){});
   }
 
   // Carrusel testimonios — flechas

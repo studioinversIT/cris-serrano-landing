@@ -210,6 +210,20 @@
     @media (min-width:1024px) {
       .lg\:text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
     }
+
+    /* ── GHL OVERRIDES — resetear estilos que GHL inyecta ── */
+    a, a:visited, a:hover { text-decoration: none !important; color: inherit; }
+    button { background: transparent; border: none; padding: 0; margin: 0; font-family: inherit; font-size: inherit; color: inherit; cursor: pointer; border-radius: 0; }
+    .faq-item button { all: unset; box-sizing: border-box; width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 0; gap: 1.5rem; cursor: pointer; text-align: left; }
+    .mt-2\.5 { margin-top: 0.625rem; }
+
+    /* ── MOBILE CTA SIZE ── */
+    @media (max-width:639px) {
+      .btn-primary { font-size: 0.9rem !important; padding: 0.75rem 1.5rem !important; }
+      #nav-cta { font-size: 0.75rem !important; padding: 0.5rem 0.875rem !important; min-height: 36px !important; white-space: nowrap; }
+      .nav-label { font-size: 0.7rem; }
+    }
+
     body { font-family: 'Inter', sans-serif; background: #0C0C0C; color: #F5F0E8; }
     .gradient-gold     { background: linear-gradient(135deg, #C9A227 0%, #E8C14A 50%, #C9A227 100%); }
     .gradient-hero     { background: radial-gradient(ellipse at 55% 0%, rgba(201,162,39,0.10) 0%, transparent 55%), #0C0C0C; }
@@ -251,8 +265,8 @@
 ════════════════════════════════════════════ -->
 <nav class="sticky-cta py-3 px-4">
   <div class="max-w-5xl mx-auto flex items-center justify-between">
-    <span class="text-sm font-semibold text-white/70">Cris Serrano · Sistema de Negocios en 24 Horas</span>
-    <a href="#vsl" id="nav-cta" class="btn-primary text-sm px-5 rounded-full inline-flex items-center" style="min-height:48px">
+    <span class="nav-label font-semibold text-white/70" style="font-size:clamp(0.65rem,2.5vw,0.875rem);line-height:1.3">Cris Serrano · Sistema de Negocios en 24 Horas</span>
+    <a href="#vsl" id="nav-cta" class="btn-primary rounded-full inline-flex items-center flex-shrink-0" style="min-height:40px;white-space:nowrap;font-size:clamp(0.7rem,2.8vw,0.875rem);padding:0.5rem 1rem">
       Ver el video →
     </a>
   </div>
@@ -306,14 +320,11 @@
     </div>
 
     <!-- Trust bar debajo del video -->
-    <div class="flex flex-wrap justify-center gap-6 py-6 px-4" style="background:rgba(20,20,20,0.8);border:1px solid rgba(201,162,39,0.18);border-top:none;border-radius:0 0 16px 16px;">
-      <div class="text-center"><p class="text-xl font-black text-gold">+80</p><p class="text-white/35 text-xs mt-0.5">países</p></div>
-      <div class="w-px bg-white/10 hidden sm:block"></div>
-      <div class="text-center"><p class="text-xl font-black text-gold">$12,500</p><p class="text-white/35 text-xs mt-0.5">por quincena</p></div>
-      <div class="w-px bg-white/10 hidden sm:block"></div>
-      <div class="text-center"><p class="text-xl font-black text-gold">+3,000</p><p class="text-white/35 text-xs mt-0.5">personas en el sistema</p></div>
-      <div class="w-px bg-white/10 hidden sm:block"></div>
-      <div class="text-center"><p class="text-xl font-black text-gold">&lt;24h</p><p class="text-white/35 text-xs mt-0.5">negocio activo</p></div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);background:rgba(20,20,20,0.8);border:1px solid rgba(201,162,39,0.18);border-top:none;border-radius:0 0 16px 16px;padding:12px 8px;">
+      <div style="text-align:center;padding:6px 4px;border-right:1px solid rgba(255,255,255,0.08)"><p style="font-size:clamp(0.85rem,3.5vw,1.25rem);font-weight:900;color:#C9A227;line-height:1.2">+80</p><p style="color:rgba(255,255,255,0.35);font-size:clamp(0.6rem,2vw,0.75rem);margin-top:2px">países</p></div>
+      <div style="text-align:center;padding:6px 4px;border-right:1px solid rgba(255,255,255,0.08)"><p style="font-size:clamp(0.85rem,3.5vw,1.25rem);font-weight:900;color:#C9A227;line-height:1.2">$12,500</p><p style="color:rgba(255,255,255,0.35);font-size:clamp(0.6rem,2vw,0.75rem);margin-top:2px">quincena</p></div>
+      <div style="text-align:center;padding:6px 4px;border-right:1px solid rgba(255,255,255,0.08)"><p style="font-size:clamp(0.85rem,3.5vw,1.25rem);font-weight:900;color:#C9A227;line-height:1.2">+3,000</p><p style="color:rgba(255,255,255,0.35);font-size:clamp(0.6rem,2vw,0.75rem);margin-top:2px">en el sistema</p></div>
+      <div style="text-align:center;padding:6px 4px"><p style="font-size:clamp(0.85rem,3.5vw,1.25rem);font-weight:900;color:#C9A227;line-height:1.2">&lt;24h</p><p style="color:rgba(255,255,255,0.35);font-size:clamp(0.6rem,2vw,0.75rem);margin-top:2px">negocio activo</p></div>
     </div>
   </div>
 </section>
@@ -737,7 +748,7 @@
     <div id="testimonials-track" class="testimonials-track" style="padding:0 5vw 4px;">
 
       <div class="flex-shrink-0 flex flex-col rounded-2xl overflow-hidden" style="width:260px;scroll-snap-align:start;border:1px solid rgba(255,255,255,0.07)">
-        <a href="https://youtube.com/shorts/Qn4EzzKWC5U" target="_blank" rel="noopener" class="shorts-wrapper block" style="text-decoration:none;background:#111 url('https://i.ytimg.com/vi/Qn4EzzKWC5U/hqdefault.jpg') center/cover;height:340px;position:relative"><div style="position:absolute;inset:0;background:rgba(0,0,0,0.25);display:flex;align-items:center;justify-content:center;"><div style="width:56px;height:56px;border-radius:50%;background:rgba(201,162,39,0.92);display:flex;align-items:center;justify-content:center;"><svg width="22" height="22" fill="#0C0C0C" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div></a>
+        <div onclick="playShort(this,'Qn4EzzKWC5U')" style="cursor:pointer;position:relative;height:340px;background:#111 url('https://i.ytimg.com/vi/Qn4EzzKWC5U/hqdefault.jpg') center/cover;flex-shrink:0"><div style="position:absolute;inset:0;background:rgba(0,0,0,0.25);display:flex;align-items:center;justify-content:center;"><div style="width:56px;height:56px;border-radius:50%;background:rgba(201,162,39,0.92);display:flex;align-items:center;justify-content:center;"><svg width="22" height="22" fill="#0C0C0C" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div></div>
         <div class="p-4" style="background:#111">
           <p class="text-white font-bold text-sm">Iván Tamayo</p>
           <p class="text-white/40 text-xs mt-0.5">Chicago, IL</p>
@@ -746,7 +757,7 @@
       </div>
 
       <div class="flex-shrink-0 flex flex-col rounded-2xl overflow-hidden" style="width:260px;scroll-snap-align:start;border:1px solid rgba(255,255,255,0.07)">
-        <a href="https://youtube.com/shorts/aRS97yIEjqA" target="_blank" rel="noopener" class="shorts-wrapper block" style="text-decoration:none;background:#111 url('https://i.ytimg.com/vi/aRS97yIEjqA/hqdefault.jpg') center/cover;height:340px;position:relative"><div style="position:absolute;inset:0;background:rgba(0,0,0,0.25);display:flex;align-items:center;justify-content:center;"><div style="width:56px;height:56px;border-radius:50%;background:rgba(201,162,39,0.92);display:flex;align-items:center;justify-content:center;"><svg width="22" height="22" fill="#0C0C0C" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div></a>
+        <div onclick="playShort(this,'aRS97yIEjqA')" style="cursor:pointer;position:relative;height:340px;background:#111 url('https://i.ytimg.com/vi/aRS97yIEjqA/hqdefault.jpg') center/cover;flex-shrink:0"><div style="position:absolute;inset:0;background:rgba(0,0,0,0.25);display:flex;align-items:center;justify-content:center;"><div style="width:56px;height:56px;border-radius:50%;background:rgba(201,162,39,0.92);display:flex;align-items:center;justify-content:center;"><svg width="22" height="22" fill="#0C0C0C" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div></div>
         <div class="p-4" style="background:#111">
           <p class="text-white font-bold text-sm">María García</p>
           <p class="text-white/40 text-xs mt-0.5">Kearny, NJ</p>
@@ -755,7 +766,7 @@
       </div>
 
       <div class="flex-shrink-0 flex flex-col rounded-2xl overflow-hidden" style="width:260px;scroll-snap-align:start;border:1px solid rgba(255,255,255,0.07)">
-        <a href="https://youtube.com/shorts/znZG9QPDE5Y" target="_blank" rel="noopener" class="shorts-wrapper block" style="text-decoration:none;background:#111 url('https://i.ytimg.com/vi/znZG9QPDE5Y/hqdefault.jpg') center/cover;height:340px;position:relative"><div style="position:absolute;inset:0;background:rgba(0,0,0,0.25);display:flex;align-items:center;justify-content:center;"><div style="width:56px;height:56px;border-radius:50%;background:rgba(201,162,39,0.92);display:flex;align-items:center;justify-content:center;"><svg width="22" height="22" fill="#0C0C0C" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div></a>
+        <div onclick="playShort(this,'znZG9QPDE5Y')" style="cursor:pointer;position:relative;height:340px;background:#111 url('https://i.ytimg.com/vi/znZG9QPDE5Y/hqdefault.jpg') center/cover;flex-shrink:0"><div style="position:absolute;inset:0;background:rgba(0,0,0,0.25);display:flex;align-items:center;justify-content:center;"><div style="width:56px;height:56px;border-radius:50%;background:rgba(201,162,39,0.92);display:flex;align-items:center;justify-content:center;"><svg width="22" height="22" fill="#0C0C0C" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div></div>
         <div class="p-4" style="background:#111">
           <p class="text-white font-bold text-sm">Sandra Ordóñez</p>
           <p class="text-white/40 text-xs mt-0.5">Port Chester, NY</p>
@@ -764,7 +775,7 @@
       </div>
 
       <div class="flex-shrink-0 flex flex-col rounded-2xl overflow-hidden" style="width:260px;scroll-snap-align:start;border:1px solid rgba(255,255,255,0.07)">
-        <a href="https://youtube.com/shorts/FK_Rv4Fx40Y" target="_blank" rel="noopener" class="shorts-wrapper block" style="text-decoration:none;background:#111 url('https://i.ytimg.com/vi/FK_Rv4Fx40Y/hqdefault.jpg') center/cover;height:340px;position:relative"><div style="position:absolute;inset:0;background:rgba(0,0,0,0.25);display:flex;align-items:center;justify-content:center;"><div style="width:56px;height:56px;border-radius:50%;background:rgba(201,162,39,0.92);display:flex;align-items:center;justify-content:center;"><svg width="22" height="22" fill="#0C0C0C" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div></a>
+        <div onclick="playShort(this,'FK_Rv4Fx40Y')" style="cursor:pointer;position:relative;height:340px;background:#111 url('https://i.ytimg.com/vi/FK_Rv4Fx40Y/hqdefault.jpg') center/cover;flex-shrink:0"><div style="position:absolute;inset:0;background:rgba(0,0,0,0.25);display:flex;align-items:center;justify-content:center;"><div style="width:56px;height:56px;border-radius:50%;background:rgba(201,162,39,0.92);display:flex;align-items:center;justify-content:center;"><svg width="22" height="22" fill="#0C0C0C" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div></div>
         <div class="p-4" style="background:#111">
           <p class="text-white font-bold text-sm">Jhon Ascuntar</p>
           <p class="text-white/40 text-xs mt-0.5">Dayton, OH</p>
@@ -773,7 +784,7 @@
       </div>
 
       <div class="flex-shrink-0 flex flex-col rounded-2xl overflow-hidden" style="width:260px;scroll-snap-align:start;border:1px solid rgba(255,255,255,0.07)">
-        <a href="https://youtube.com/shorts/tRt5Ly99ldM" target="_blank" rel="noopener" class="shorts-wrapper block" style="text-decoration:none;background:#111 url('https://i.ytimg.com/vi/tRt5Ly99ldM/hqdefault.jpg') center/cover;height:340px;position:relative"><div style="position:absolute;inset:0;background:rgba(0,0,0,0.25);display:flex;align-items:center;justify-content:center;"><div style="width:56px;height:56px;border-radius:50%;background:rgba(201,162,39,0.92);display:flex;align-items:center;justify-content:center;"><svg width="22" height="22" fill="#0C0C0C" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div></a>
+        <div onclick="playShort(this,'tRt5Ly99ldM')" style="cursor:pointer;position:relative;height:340px;background:#111 url('https://i.ytimg.com/vi/tRt5Ly99ldM/hqdefault.jpg') center/cover;flex-shrink:0"><div style="position:absolute;inset:0;background:rgba(0,0,0,0.25);display:flex;align-items:center;justify-content:center;"><div style="width:56px;height:56px;border-radius:50%;background:rgba(201,162,39,0.92);display:flex;align-items:center;justify-content:center;"><svg width="22" height="22" fill="#0C0C0C" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div></div>
         <div class="p-4" style="background:#111">
           <p class="text-white font-bold text-sm">María Guanuchi</p>
           <p class="text-white/40 text-xs mt-0.5">Newark, NJ</p>
@@ -782,7 +793,7 @@
       </div>
 
       <div class="flex-shrink-0 flex flex-col rounded-2xl overflow-hidden" style="width:260px;scroll-snap-align:start;border:1px solid rgba(255,255,255,0.07)">
-        <a href="https://youtube.com/shorts/4GSFTfplIwM" target="_blank" rel="noopener" class="shorts-wrapper block" style="text-decoration:none;background:#111 url('https://i.ytimg.com/vi/4GSFTfplIwM/hqdefault.jpg') center/cover;height:340px;position:relative"><div style="position:absolute;inset:0;background:rgba(0,0,0,0.25);display:flex;align-items:center;justify-content:center;"><div style="width:56px;height:56px;border-radius:50%;background:rgba(201,162,39,0.92);display:flex;align-items:center;justify-content:center;"><svg width="22" height="22" fill="#0C0C0C" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div></a>
+        <div onclick="playShort(this,'4GSFTfplIwM')" style="cursor:pointer;position:relative;height:340px;background:#111 url('https://i.ytimg.com/vi/4GSFTfplIwM/hqdefault.jpg') center/cover;flex-shrink:0"><div style="position:absolute;inset:0;background:rgba(0,0,0,0.25);display:flex;align-items:center;justify-content:center;"><div style="width:56px;height:56px;border-radius:50%;background:rgba(201,162,39,0.92);display:flex;align-items:center;justify-content:center;"><svg width="22" height="22" fill="#0C0C0C" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div></div>
         <div class="p-4" style="background:#111">
           <p class="text-white font-bold text-sm">Tonaly Pacheco</p>
           <p class="text-white/40 text-xs mt-0.5">Monterrey, MEX</p>
@@ -1069,6 +1080,12 @@
   }
 
   // REEMPLAZA 'NUMERO' con el número real de Cris (sin + ni espacios, ej: 15551234567)
+  function playShort(el, id) {
+    el.style.backgroundImage = 'none';
+    el.style.backgroundColor = '#000';
+    el.innerHTML = '<iframe src="https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0" style="position:absolute;inset:0;width:100%;height:100%;border:0" allow="autoplay;picture-in-picture;fullscreen" allowfullscreen></iframe>';
+  }
+
   var WA_NUMERO = '18623018694';
 
   function openModal() {

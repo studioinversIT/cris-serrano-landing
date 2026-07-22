@@ -1074,7 +1074,8 @@
     // Re-observe reveal elements inside unlocked content
     document.querySelectorAll('#locked-content [data-reveal]').forEach(function(el) {
       el.classList.remove('in');
-      revealObs.observe(el);
+      if (typeof revealObs !== 'undefined') revealObs.observe(el);
+      else el.classList.add('in');
     });
 
     // Actualizar nav CTA
@@ -1172,17 +1173,24 @@
   enableDrag(document.getElementById('gallery-track'));
 
   // ── Element-level scroll reveal ──────────────────────────────────
-  var revealObs = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in');
-        revealObs.unobserve(entry.target);
-      }
+  if ('IntersectionObserver' in window) {
+    var revealObs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          revealObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.06, rootMargin: '0px 0px 0px 0px' });
+    document.querySelectorAll('[data-reveal]').forEach(function(el) {
+      revealObs.observe(el);
     });
-  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
-  document.querySelectorAll('[data-reveal]').forEach(function(el) {
-    revealObs.observe(el);
-  });
+  } else {
+    // Fallback: mostrar todo inmediatamente si IO no está soportado
+    document.querySelectorAll('[data-reveal]').forEach(function(el) {
+      el.classList.add('in');
+    });
+  }
 
   // Smooth scroll para los anchor links
   document.querySelectorAll('a[href^="#"]').forEach(a => {

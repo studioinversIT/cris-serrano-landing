@@ -255,6 +255,18 @@
     @media (max-width: 640px) {
       .hero-headline { font-size: 1.5rem !important; line-height: 1.2 !important; }
     }
+
+    /* ── SCROLL REVEAL ── */
+    [data-reveal] { opacity:0; transform:translateY(18px); transition:opacity 0.55s ease,transform 0.55s ease; }
+    [data-reveal].in { opacity:1; transform:none; }
+    [data-reveal][data-d="2"] { transition-delay:0.12s; }
+    [data-reveal][data-d="3"] { transition-delay:0.24s; }
+    [data-reveal][data-d="4"] { transition-delay:0.36s; }
+
+    /* ── CTA FLOAT ── */
+    @keyframes softFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-5px)} }
+    .btn-float { animation:softFloat 3s ease-in-out infinite; }
+    .btn-float:hover { animation:none; transform:translateY(-2px); box-shadow:0 12px 40px rgba(201,162,39,0.5),0 0 0 3px rgba(201,162,39,0.4); }
   </style>
 </head>
 
@@ -365,23 +377,23 @@
     </h2>
 
     <div class="divide-y divide-white/[0.06]">
-      <div class="flex items-start gap-8 py-8">
+      <div class="flex items-start gap-8 py-8" data-reveal>
         <span class="text-5xl font-black text-gold/20 leading-none w-12 flex-shrink-0 text-right">01</span>
         <p class="text-white/70 text-lg leading-relaxed pt-1">Trabajas duro pero sientes que tu dinero no crece al ritmo que mereces.</p>
       </div>
-      <div class="flex items-start gap-8 py-8">
+      <div class="flex items-start gap-8 py-8" data-reveal>
         <span class="text-5xl font-black text-gold/20 leading-none w-12 flex-shrink-0 text-right">02</span>
         <p class="text-white/70 text-lg leading-relaxed pt-1">Quieres emprender pero no sabes por dónde empezar ni cuánto necesitas invertir.</p>
       </div>
-      <div class="flex items-start gap-8 py-8">
+      <div class="flex items-start gap-8 py-8" data-reveal>
         <span class="text-5xl font-black text-gold/20 leading-none w-12 flex-shrink-0 text-right">03</span>
         <p class="text-white/70 text-lg leading-relaxed pt-1">Buscas generar ingresos adicionales sin depender de un solo sueldo.</p>
       </div>
-      <div class="flex items-start gap-8 py-8">
+      <div class="flex items-start gap-8 py-8" data-reveal>
         <span class="text-5xl font-black text-gold/20 leading-none w-12 flex-shrink-0 text-right">04</span>
         <p class="text-white/70 text-lg leading-relaxed pt-1">Has visto oportunidades antes, pero el miedo a perder o no saber hacerlo te frenó.</p>
       </div>
-      <div class="flex items-start gap-8 py-8">
+      <div class="flex items-start gap-8 py-8" data-reveal>
         <span class="text-5xl font-black text-gold/20 leading-none w-12 flex-shrink-0 text-right">05</span>
         <p class="text-white/70 text-lg leading-relaxed pt-1">Quieres construir algo propio — algo real, con el que cuidar a tu familia.</p>
       </div>
@@ -392,7 +404,7 @@
     </p>
 
     <div class="text-center mt-10">
-      <a href="#" onclick="openModal();return false;" class="btn-primary inline-block px-8 py-4 rounded-full text-base font-black">
+      <a href="#" onclick="openModal();return false;" class="btn-primary btn-float inline-block px-8 py-4 rounded-full text-base font-black">
         Sí, quiero conocer el sistema →
       </a>
     </div>
@@ -419,7 +431,7 @@
       </p>
     </div>
 
-    <blockquote class="my-14 py-10 border-t border-b border-white/[0.08]">
+    <blockquote class="my-14 py-10 border-t border-b border-white/[0.08]" data-reveal>
       <p class="text-2xl md:text-3xl font-black text-white leading-snug">
         "Hasta que encontré un modelo de negocios que no me pedía que inventara nada. Solo que siguiera un sistema comprobado."
       </p>
@@ -434,7 +446,7 @@
       </p>
     </div>
 
-    <div class="grid grid-cols-3 gap-0 mt-16 border border-white/[0.06] rounded-2xl overflow-hidden">
+    <div class="grid grid-cols-3 gap-0 mt-16 border border-white/[0.06] rounded-2xl overflow-hidden" data-reveal>
       <div class="py-8 px-6 text-center border-r border-white/[0.06]">
         <p class="text-3xl font-black text-gold">$12,500</p>
         <p class="text-white/40 text-sm mt-1">por quincena</p>
@@ -449,7 +461,7 @@
       </div>
     </div>
 
-    <div class="mt-12 flex items-center gap-7">
+    <div class="mt-12 flex items-center gap-7" data-reveal>
       <img src="cris.jpg" alt="Christopher Serrano" class="w-28 h-36 rounded-2xl object-cover object-top flex-shrink-0" />
       <div>
         <p class="font-black text-white text-xl">Christopher Serrano</p>
@@ -473,7 +485,7 @@
 
     <div class="divide-y divide-white/[0.06]">
 
-      <div class="py-10 flex gap-8 items-start">
+      <div class="py-10 flex gap-8 items-start" data-reveal>
         <div class="flex-shrink-0 w-12 h-12 rounded-full gradient-gold flex items-center justify-center text-navy font-black text-sm">1</div>
         <div>
           <p class="text-white/30 text-xs uppercase tracking-widest mb-2">HORA 0</p>
@@ -482,7 +494,7 @@
         </div>
       </div>
 
-      <div class="py-10 flex gap-8 items-start">
+      <div class="py-10 flex gap-8 items-start" data-reveal>
         <div class="flex-shrink-0 w-12 h-12 rounded-full gradient-gold flex items-center justify-center text-navy font-black text-sm">2</div>
         <div>
           <p class="text-white/30 text-xs uppercase tracking-widest mb-2">HORA 1–3</p>
@@ -491,7 +503,7 @@
         </div>
       </div>
 
-      <div class="py-10 flex gap-8 items-start">
+      <div class="py-10 flex gap-8 items-start" data-reveal>
         <div class="flex-shrink-0 w-12 h-12 rounded-full gradient-gold flex items-center justify-center text-navy font-black text-sm">3</div>
         <div>
           <p class="text-white/30 text-xs uppercase tracking-widest mb-2">HORA 3–12</p>
@@ -500,7 +512,7 @@
         </div>
       </div>
 
-      <div class="py-10 flex gap-8 items-start">
+      <div class="py-10 flex gap-8 items-start" data-reveal>
         <div class="flex-shrink-0 w-12 h-12 rounded-full gradient-gold flex items-center justify-center text-navy font-black text-sm">4</div>
         <div>
           <p class="text-white/30 text-xs uppercase tracking-widest mb-2">HORA 12–24</p>
@@ -517,7 +529,7 @@
     </p>
 
     <div class="text-center mt-10">
-      <a href="#" onclick="openModal();return false;" class="btn-primary inline-block text-base font-black px-10 py-4 rounded-full">
+      <a href="#" onclick="openModal();return false;" class="btn-primary btn-float inline-block text-base font-black px-10 py-4 rounded-full">
         Agenda hoy. Mañana tienes tu negocio. →
       </a>
       <p class="text-white/30 text-sm mt-3">Cupos limitados por semana</p>
@@ -541,7 +553,7 @@
 
     <div class="divide-y divide-white/[0.06]">
 
-      <div class="py-8 flex items-start gap-8">
+      <div class="py-8 flex items-start gap-8" data-reveal>
         <span class="text-4xl font-black text-gold/25 leading-none w-10 flex-shrink-0">01</span>
         <div class="flex-1">
           <div class="flex items-baseline justify-between gap-4 flex-wrap">
@@ -552,7 +564,7 @@
         </div>
       </div>
 
-      <div class="py-8 flex items-start gap-8">
+      <div class="py-8 flex items-start gap-8" data-reveal>
         <span class="text-4xl font-black text-gold/25 leading-none w-10 flex-shrink-0">02</span>
         <div class="flex-1">
           <div class="flex items-baseline justify-between gap-4 flex-wrap">
@@ -563,7 +575,7 @@
         </div>
       </div>
 
-      <div class="py-8 flex items-start gap-8">
+      <div class="py-8 flex items-start gap-8" data-reveal>
         <span class="text-4xl font-black text-gold/25 leading-none w-10 flex-shrink-0">03</span>
         <div class="flex-1">
           <div class="flex items-baseline justify-between gap-4 flex-wrap">
@@ -574,7 +586,7 @@
         </div>
       </div>
 
-      <div class="py-8 flex items-start gap-8">
+      <div class="py-8 flex items-start gap-8" data-reveal>
         <span class="text-4xl font-black text-gold/25 leading-none w-10 flex-shrink-0">04</span>
         <div class="flex-1">
           <div class="flex items-baseline justify-between gap-4 flex-wrap">
@@ -587,7 +599,7 @@
 
     </div>
 
-    <div class="mt-14 rounded-2xl border border-gold/20 p-10">
+    <div class="mt-14 rounded-2xl border border-gold/20 p-10" data-reveal>
       <p class="text-xs uppercase tracking-[0.2em] text-white/30 mb-4">La mayor oportunidad del modelo</p>
       <h3 class="text-3xl font-black text-white mb-4 leading-tight">La franquicia digital</h3>
       <p class="text-white/60 text-base leading-relaxed mb-8">A diferencia de una franquicia tradicional que cuesta un dineral abrir, con tu franquicia digital <strong class="text-white">te pagan a ti</strong> por abrirla y crecer.</p>
@@ -623,7 +635,7 @@
       Cuando empiezas conmigo, no recibes un link y buena suerte. Recibes acceso a un sistema educativo completo — aprenderás de personas que no solo saben, sino que hacen y tienen los resultados más grandes de la industria.
     </p>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-5">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-5" data-reveal>
       <div class="flex items-start gap-3">
         <span class="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0 mt-2.5"></span>
         <p class="text-white/70 text-base leading-relaxed">Desarrolla el liderazgo que multiplica tu equipo y tus ingresos</p>
@@ -650,13 +662,13 @@
       </div>
     </div>
 
-    <div class="mt-12 py-8 border-t border-white/[0.06]">
+    <div class="mt-12 py-8 border-t border-white/[0.06]" data-reveal>
       <p class="text-white font-semibold text-lg">No aprenderás de coaches ni de teoría. Aprenderás de <span class="text-gold">los distribuidores que ya generaron millones en este mismo negocio</span> — el tipo de formación al que muy pocos tienen acceso.</p>
       <p class="text-white/50 text-base mt-3">Y además tendrás <span class="text-white">guía directa de Cris y su equipo</span> — en línea y presencial. No caminas solo.</p>
     </div>
 
     <div class="text-center mt-8">
-      <a href="#" onclick="openModal();return false;" class="btn-primary inline-block px-8 py-4 rounded-full text-base font-black">
+      <a href="#" onclick="openModal();return false;" class="btn-primary btn-float inline-block px-8 py-4 rounded-full text-base font-black">
         Quiero entrar al sistema →
       </a>
     </div>
@@ -728,7 +740,7 @@
 <!-- ══ TESTIMONIOS ══ -->
 <section class="py-24" style="background:#0a0a0a;overflow:hidden">
 
-  <div class="max-w-3xl mx-auto px-4 mb-14">
+  <div class="max-w-3xl mx-auto px-4 mb-14" data-reveal>
     <p class="text-xs uppercase tracking-[0.2em] text-white/30 mb-5 text-center">Ellos ya dieron el paso</p>
     <h2 class="text-4xl md:text-5xl font-black text-center leading-[1.05]">
       Lo que dicen las personas<br/>que empezaron donde tú estás ahora
@@ -804,7 +816,7 @@
     </div>
   </div>
 
-  <div class="max-w-3xl mx-auto px-4 mt-14">
+  <div class="max-w-3xl mx-auto px-4 mt-14" data-reveal>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-0 divide-x divide-y md:divide-y-0 divide-white/[0.06] border border-white/[0.06] rounded-2xl overflow-hidden">
       <div class="py-8 px-6 text-center">
         <p class="text-3xl font-black text-gold">+3,000</p>
@@ -838,7 +850,7 @@
     <p class="text-xs uppercase tracking-[0.2em] text-white/30 mb-5 text-center">Preguntas frecuentes</p>
     <h2 class="text-4xl md:text-5xl font-black mb-16 text-center leading-[1.05]">Todo lo que<br/>necesitas saber</h2>
 
-    <div id="faq" class="divide-y divide-white/[0.06]">
+    <div id="faq" class="divide-y divide-white/[0.06]" data-reveal>
 
       <div class="faq-item">
         <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between py-6 text-left gap-6">
@@ -966,9 +978,13 @@
       <input type="text" id="modal-nombre" placeholder="Tu nombre" required
         style="width:100%;padding:14px 18px;border-radius:12px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:#fff;font-size:16px;outline:none;box-sizing:border-box"
         onfocus="this.style.borderColor='#C9A227'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'" />
-      <input type="tel" id="modal-telefono" placeholder="Tu WhatsApp (con código de país)" required
-        style="width:100%;padding:14px 18px;border-radius:12px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:#fff;font-size:16px;outline:none;box-sizing:border-box"
-        onfocus="this.style.borderColor='#C9A227'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'" />
+      <div id="phone-wrapper" style="display:flex;align-items:center;border-radius:12px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);overflow:hidden">
+        <span style="padding:14px 6px 14px 18px;color:rgba(255,255,255,0.5);font-size:16px;flex-shrink:0;font-family:inherit;user-select:none">+1</span>
+        <input type="tel" id="modal-telefono" placeholder="000-000-0000" required
+          style="flex:1;padding:14px 12px 14px 4px;border:none;background:transparent;color:#fff;font-size:16px;outline:none;box-sizing:border-box;min-width:0"
+          onfocus="document.getElementById('phone-wrapper').style.borderColor='#C9A227'"
+          onblur="document.getElementById('phone-wrapper').style.borderColor='rgba(255,255,255,0.1)'" />
+      </div>
       <button type="submit" class="btn-primary" style="width:100%;padding:16px;border-radius:12px;font-size:17px;font-weight:900;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px">
         <svg style="width:18px;height:18px;fill:#0C0C0C;flex-shrink:0" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         Ir al WhatsApp de Cris →
@@ -1055,6 +1071,11 @@
       s.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
       observer.observe(s);
     });
+    // Re-observe reveal elements inside unlocked content
+    document.querySelectorAll('#locked-content [data-reveal]').forEach(function(el) {
+      el.classList.remove('in');
+      revealObs.observe(el);
+    });
 
     // Actualizar nav CTA
     var navCta = document.getElementById('nav-cta');
@@ -1107,8 +1128,14 @@
 
   function handleModalSubmit(e) {
     e.preventDefault();
-    var nombre   = document.getElementById('modal-nombre').value.trim();
-    var telefono = document.getElementById('modal-telefono').value.trim();
+    var nombre  = document.getElementById('modal-nombre').value.trim();
+    var rawTel  = document.getElementById('modal-telefono').value.trim();
+    var telefono;
+    if (rawTel.startsWith('+')) {
+      telefono = rawTel.replace(/\s/g, '');
+    } else {
+      telefono = '+1' + rawTel.replace(/\D/g, '');
+    }
     var mensaje  = encodeURIComponent(
       'Hola Cris, soy ' + nombre + '. Vi tu página y quiero agendar mi llamada. Mi WhatsApp es ' + telefono + '.'
     );
@@ -1143,6 +1170,19 @@
   }
   enableDrag(document.getElementById('testimonials-track'));
   enableDrag(document.getElementById('gallery-track'));
+
+  // ── Element-level scroll reveal ──────────────────────────────────
+  var revealObs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        revealObs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  document.querySelectorAll('[data-reveal]').forEach(function(el) {
+    revealObs.observe(el);
+  });
 
   // Smooth scroll para los anchor links
   document.querySelectorAll('a[href^="#"]').forEach(a => {
